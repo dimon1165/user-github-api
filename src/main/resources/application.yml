@@ -1,0 +1,15 @@
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    url: /swagger/open-api.yaml
+  api-docs:
+    path: /api-docs
+
+repository:
+  fork:
+    search:
+      enable: false
+
+client:
+  github:
+    url: https://api.github.com

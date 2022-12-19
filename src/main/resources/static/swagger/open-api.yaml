@@ -1,0 +1,69 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+paths:
+  /repository/user/{login}:
+    get:
+      summary: Get github repo info that belongs to user
+      operationId: getUserGitHubRepoInfo
+      parameters:
+        - name: login
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        "406":
+          description: Not Acceptable
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ExceptionBody'
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ExceptionBody'
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RepositoryDto'
+components:
+  schemas:
+    ExceptionBody:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+        message:
+          type: string
+    BranchDto:
+      type: object
+      properties:
+        branchName:
+          type: string
+        lastCommitSha:
+          type: string
+    RepositoryDto:
+      type: object
+      properties:
+        repositoryName:
+          type: string
+        ownerLogin:
+          type: string
+        branches:
+          type: array
+          items:
+            $ref: '#/components/schemas/BranchDto'

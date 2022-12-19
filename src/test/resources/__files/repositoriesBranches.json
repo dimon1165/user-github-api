@@ -1,0 +1,16 @@
+[
+  {
+    "name": "dependabot/maven/org.springframework.boot-spring-boot-starter-web-2.5.12",
+    "commit": {
+      "sha": "59d06e3f691222cd77948d193e4d8cccee7f976c"
+    },
+    "protected": false
+  },
+  {
+    "name": "master",
+    "commit": {
+      "sha": "636b9e3001dd79dc7006d99ae5ebce41ff39292c"
+    },
+    "protected": false
+  }
+]

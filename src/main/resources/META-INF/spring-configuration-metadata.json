@@ -1,0 +1,10 @@
+{
+  "properties": [
+    {
+      "name": "client.github.url",
+      "type": "java.lang.String",
+      "description": " Base GitHub api url",
+      "defaultValue": "https://api.github.com"
+    }
+  ]
+}
